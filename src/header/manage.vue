@@ -72,7 +72,7 @@ export default {
         },
         resolveImg: function (img) {
             // return __imgPath + "image/header/panel/" + img;
-            return 'https://img.jx3box.com/image/box/pvp.svg'
+            return 'https://img.vl3box.com/image/box/pvp.svg'
         },
     },
 };

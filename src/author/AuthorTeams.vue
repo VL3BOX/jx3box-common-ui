@@ -36,7 +36,7 @@ export default {
             teams: [
                 // {
                 //     team_name : '诗画印象',
-                //     team_logo : 'https://oss.jx3box.com/2019/09/logo.png',
+                //     team_logo : 'https://oss.vl3box.com/2019/09/logo.png',
                 //     team_server : "蝶恋花"
                 // }
             ],

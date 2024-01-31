@@ -1,6 +1,6 @@
 <template>
     <footer class="m-bottom">
-        <a :href="homepage" target="_blank">&copy; JX3BOX.COM</a>
+        <a :href="homepage" target="_blank">&copy; vl3box.com</a>
         <a class="u-feedback" :href="feedback" target="_blank">❤ Help</a>
     </footer>
 </template>

@@ -52,9 +52,9 @@ components: {
 1. 头部引入文件
 
 ```html
-<script src="https://oss.jx3box.com/static/jx3box-lib/vue.js"></script>
-<script src="https://oss.jx3box.com/static/jx3box-common-ui/newheader.umd.min.js"></script>
-<link rel="stylesheet" href="https://oss.jx3box.com/static/jx3box-common-ui/newheader.css"/>
+<script src="https://oss.vl3box.com/static/jx3box-lib/vue.js"></script>
+<script src="https://oss.vl3box.com/static/jx3box-common-ui/newheader.umd.min.js"></script>
+<link rel="stylesheet" href="https://oss.vl3box.com/static/jx3box-common-ui/newheader.css"/>
 ```
 
 2. 需要插入的位置

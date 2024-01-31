@@ -5,7 +5,7 @@ function getRepoInfo(repo) {
 }
 
 function getBuilders(coders) {
-    return axios.get(`https://server.jx3box.com/user/list?uid=${coders}`);
+    return axios.get(`https://server.vl3box.com/user/list?uid=${coders}`);
 }
 
 function getRepoCoders(repo) {

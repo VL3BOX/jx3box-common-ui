@@ -27,14 +27,14 @@ export default {
                 {
                     name: "旗舰",
                     client: "std",
-                    from: "origin.jx3box.com",
-                    to: "www.jx3box.com",
+                    from: "origin.vl3box.com",
+                    to: "www.vl3box.com",
                 },
                 {
                     name: "缘起",
                     client: "origin",
-                    to: "origin.jx3box.com",
-                    from: "www.jx3box.com",
+                    to: "origin.vl3box.com",
+                    from: "www.vl3box.com",
                 },
             ],
             client: this.defaultValue,
