@@ -3,7 +3,7 @@
         <div class="u-label">
             <i class="el-icon-school"></i>
             <!-- <img svg-inline src="../../assets/img/leftsidebar/united.svg" /> -->
-            <span>所在团队</span>
+            <span>{{ $t('所在团队') }}</span>
         </div>
         <div class="u-teams">
             <el-tooltip

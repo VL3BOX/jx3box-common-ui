@@ -39,7 +39,7 @@
         </div>
         <span class="u-close" @click="closeBox($event)">
             <i class="el-icon-upload2"></i>
-            <span>收起</span>
+            <span>{{ $t('收起') }}</span>
         </span>
     </div>
 </template>

@@ -4,7 +4,7 @@
             <Avatar class="u-avatar" :uid="uid" :url="data.user_avatar" size="s" :frame="data.user_avatar_frame" />
             <div class="u-info">
                 <div class="u-name">
-                    <el-tooltip class="item" effect="dark" content="签约作者" placement="top" v-if="isSuperAuthor">
+                    <el-tooltip class="item" effect="dark" :content="$t('签约作者')" placement="top" v-if="isSuperAuthor">
                         <a class="u-superauthor" href="/about/superauthor" target="_blank">
                             <img :src="super_author_icon" alt="superauthor" />
                         </a>

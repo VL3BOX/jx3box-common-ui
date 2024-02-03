@@ -3,7 +3,7 @@
         <div class="u-label">
             <i class="el-icon-trophy"></i>
             <!-- <img svg-inline src="../../assets/img/leftsidebar/medal.svg" /> -->
-            <span>作者荣誉</span>
+            <span>{{ $t('作者荣誉') }}</span>
         </div>
         <div class="u-medals" v-if="medals && medals.length">
             <el-tooltip

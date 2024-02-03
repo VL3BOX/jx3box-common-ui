@@ -33,7 +33,7 @@
                 class="u-publish el-button el-button--primary el-button--medium u-op-public"
             >
                 <i class="el-icon-edit-outline"></i>
-                <span>发布</span>
+                <span>{{ $t('发布') }}</span>
             </a>
             <a
                 v-if="feedbackEnable"
@@ -43,7 +43,7 @@
                 target="_blank"
             >
                 <i class="el-icon-info"></i>
-                <span>反馈</span>
+                <span>{{ $t('反馈') }}</span>
             </a>
             <Adminbutton v-if="adminEnable" class="u-admin" />
             <ListAdmin v-if="topicEnable" />

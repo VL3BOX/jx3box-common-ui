@@ -3,13 +3,13 @@
     <div class="u-prev">
         <a :href="getPostLink(post.prev_post)" class="el-button el-button--default el-button--small is-plain" :class="{'is-disabled': !post.prev_post }">
             <i class="el-icon-arrow-left"></i>
-            <span>上一篇</span>
+            <span>{{ $t('上一篇') }}</span>
         </a>
         <a :href="getPostLink(post.prev_post)" class="u-post-title">{{ getPostTitle(post.prev_post) }}</a>
     </div>
     <div class="u-next">
         <a :href="getPostLink(post.next_post)" class="el-button el-button--default el-button--small is-plain" :class="{'is-disabled': !post.next_post }">
-            <span>下一篇</span>
+            <span>{{ $t('下一篇') }}</span>
             <i class="el-icon-arrow-right"></i>
         </a>
         <a :href="getPostLink(post.prev_post)" class="u-post-title">{{ getPostTitle(post.next_post) }}</a>

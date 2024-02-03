@@ -5,7 +5,7 @@
             <div class="u-interact">
                 <AuthorFollow style="margin-right: 8px" :uid="uid" />
                 <!-- <AuthorGift :uid="uid" /> -->
-                <el-button icon="el-icon-message" class="u-btn" size="mini" @click="onMessage">私信</el-button>
+                <el-button icon="el-icon-message" class="u-btn" size="mini" @click="onMessage">{{ $t('私信') }}</el-button>
             </div>
             <!-- <AuthorMsg :uid="uid" /> -->
             <AuthorLink class="u-block u-links" :uid="uid" :data="data" />

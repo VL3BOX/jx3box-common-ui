@@ -6,7 +6,7 @@
         v-if="mode == 'cms'"
     >
         <img class="u-icon" svg-inline src="../../assets/img/widget/qr-code.svg" />
-        <span class="u-text">二维码</span>
+        <span class="u-text">{{ $t('二维码') }}</span>
         <div class="u-qrcode">
             <qrcode-vue
                 class="u-pic"
@@ -14,7 +14,7 @@
                 :size="size"
                 level="H"
             ></qrcode-vue>
-            <span>扫一扫即可访问</span>
+            <span>{{ $t('扫一扫即可访问') }}</span>
         </div>
     </div>
     <div class="w-qrcode-static" v-else-if="mode == 'static'">
@@ -30,7 +30,7 @@
                     class="u-icon"
                     svg-inline
                     src="../../assets/img/widget/qr-code.svg"
-                />扫一扫手机访问</span
+                />{{ $t('扫一扫手机访问') }}</span
             >
         </div>
     </div>

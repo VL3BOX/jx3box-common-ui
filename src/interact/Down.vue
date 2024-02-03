@@ -1,7 +1,7 @@
 <template>
     <a class="w-down" :class="cls" :href="url" @click="doDown">
         <i class="el-icon-download"></i>
-        <span class="u-text" v-if="!$slots.default">下载</span>
+        <span class="u-text" v-if="!$slots.default">{{ $t('下载') }}</span>
         <slot></slot>
         <span class="u-count" v-if="showCount">{{ total }}</span>
     </a>

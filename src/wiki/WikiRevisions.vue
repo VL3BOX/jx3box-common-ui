@@ -2,7 +2,7 @@
     <WikiPanel class="c-wiki-revisions" scene="detail">
         <template slot="head-title">
             <i class="el-icon-time"></i>
-            <span>历史版本</span>
+            <span>{{ $t('历史版本') }}</span>
         </template>
         <template slot="body">
             <div class="m-revisions-panel">
@@ -13,10 +13,10 @@
                 </div>
                 <table v-if="versions && versions.length" class="m-histories">
                     <tr>
-                        <th>版本</th>
-                        <th>更新时间</th>
-                        <th>贡献者</th>
-                        <th>修订说明</th>
+                        <th>{{ $t('版本') }}</th>
+                        <th>{{ $t('更新时间') }}</th>
+                        <th>{{ $t('贡献者') }}</th>
+                        <th>{{ $t('修订说明') }}</th>
                     </tr>
                     <tr class="history" v-for="(ver, key) in versions" :key="key">
                         <td>

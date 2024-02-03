@@ -2,8 +2,8 @@
     <el-button class="w-feed" size="mini" type="primary" @click="doFeed" :disabled="true">
         <i v-if="!subscribed" class="el-icon-bell"></i>
         <i v-else class="el-icon-message-solid"></i>
-        <span v-if="!subscribed">订阅</span>
-        <span v-else>取消订阅</span>
+        <span v-if="!subscribed">{{ $t('订阅') }}</span>
+        <span v-else>{{ $t('取消订阅') }}</span>
     </el-button>
 </template>
 

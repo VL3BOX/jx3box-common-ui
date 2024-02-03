@@ -3,7 +3,7 @@
         <!-- 标题 -->
         <div class="m-single-title">
             <span class="u-title u-sub-block" :href="url" :title="title">
-                <i class="u-original" v-if="isOriginal">原创</i>
+                <i class="u-original" v-if="isOriginal">{{ $t('原创') }}</i>
                 <i class="u-private" v-if="post.post_status != 'publish' || !!~~post.visible">
                     <i class="el-icon-lock" v-if="post.post_status == 'draft' || post.post_status == 'pending' || !!~~post.visible" style="color:#fb9b24"></i>
                     <i class="el-icon-delete" v-if="post.post_status == 'dustbin'" style="color:#c00"></i>
@@ -33,7 +33,7 @@
 
             <!-- 客户端 -->
             <div class="u-meta u-sub-block">
-                <em class="u-label">适用客户端</em>
+                <em class="u-label">{{ $t('适用客户端') }}</em>
                 <span class="u-value u-client" :class="'i-client-' + client">{{ showClientLabel(client) }}</span>
             </div>
 
@@ -59,7 +59,7 @@
                 {{ views }}
             </span>
 
-            <span class="u-word-count u-sub-block" v-if="wordCount" title="累计字数">
+            <span class="u-word-count u-sub-block" v-if="wordCount" :title="$t('累计字数')">
                 <i class="el-icon-sunny"></i>
                 {{ wordCount }}
             </span>
@@ -67,7 +67,7 @@
             <!-- 编辑 -->
             <a class="u-edit u-sub-block" :href="edit_link" v-if="canEdit">
                 <i class="u-icon-edit el-icon-edit-outline"></i>
-                <span>编辑</span>
+                <span>{{ $t('编辑') }}</span>
             </a>
         </div>
     </header>

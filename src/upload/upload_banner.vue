@@ -4,7 +4,7 @@
         <div v-if="data" class="u-upload" :style="uploadStyle">
             <img :src="preview" />
             <i class="u-upload-mask"></i>
-            <i class="u-upload-delete el-icon-delete" title="移除" @click="remove"></i>
+            <i class="u-upload-delete el-icon-delete" :title="$t('移除')" @click="remove"></i>
         </div>
         <div v-else class="u-upload el-upload el-upload--picture-card" @click="select">
             <i class="el-icon-plus"></i>

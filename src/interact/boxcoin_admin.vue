@@ -1,6 +1,6 @@
 <template>
     <div class="w-boxcoin-admin" v-if="allowBoxcoin">
-        <el-tooltip effect="dark" content="品鉴" placement="top-start">
+        <el-tooltip effect="dark" :content="$t('品鉴')" placement="top-start">
             <div class="w-boxcoin-block">
                 <img
                     @click="openBoxcoinPop"
@@ -10,10 +10,10 @@
                 />
             </div>
         </el-tooltip>
-        <el-dialog title="品鉴评分" :visible.sync="visible" custom-class="w-boxcoin-pop" :close-on-click-modal="false" append-to-body>
+        <el-dialog :title="$t('品鉴评分')" :visible.sync="visible" custom-class="w-boxcoin-pop" :close-on-click-modal="false" append-to-body>
             <div class="w-boxcoin-admin-content">
                 <div class="u-left">
-                    <em class="u-label">本月状态</em>
+                    <em class="u-label">{{ $t('本月状态') }}</em>
                     已用<b>{{this.used}}</b> 剩余<b>{{this.left}}</b> 总计<b>{{this.total}}</b>
                     <el-progress :percentage="this.total ? 100 - (this.used * 100 / this.total) : 0" :stroke-width="15" :text-inside="true"></el-progress>
                 </div>
@@ -25,8 +25,8 @@
                             <el-radio :label="item" v-for="item in fitPoints" :key="item" border>
                                 <b>{{item}}</b>盒币
                             </el-radio>
-                            <el-radio label="custom" border>自定义</el-radio>
-                            <el-input v-model="amount" v-show="count === 'custom'" placeholder="输入自定义数量"></el-input>
+                            <el-radio label="custom" border>{{ $t('自定义') }}</el-radio>
+                            <el-input v-model="amount" v-show="count === 'custom'" :placeholder="$t('输入自定义数量')"></el-input>
                         </el-radio-group>
                     </div>
                 </div>
@@ -40,13 +40,13 @@
                             :maxlength="30"
                             show-word-limit
                         ></el-input>
-                        <el-button :disabled="fetchingCurrentRelease" @click="insertCurrentRelease">插入当前版本</el-button>
+                        <el-button :disabled="fetchingCurrentRelease" @click="insertCurrentRelease">{{ $t('插入当前版本') }}</el-button>
                     </div>
                 </div>
             </div>
             <span slot="footer" class="dialog-footer">
-                <el-button @click="visible = false">取 消</el-button>
-                <el-button type="primary" @click="submit" :disabled="!ready || submitting">确 定</el-button>
+                <el-button @click="visible = false">{{ $t('取 消') }}</el-button>
+                <el-button type="primary" @click="submit" :disabled="!ready || submitting">{{ $t('确 定') }}</el-button>
             </span>
         </el-dialog>
     </div>

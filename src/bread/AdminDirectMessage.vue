@@ -5,7 +5,7 @@
         v-if="isEditor"
     >
         <i class="el-icon-message"></i>
-        <span>私信</span>
+        <span>{{ $t('私信') }}</span>
     </a>
 </template>
 

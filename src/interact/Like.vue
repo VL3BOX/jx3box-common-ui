@@ -11,7 +11,7 @@
         <i v-else class="u-heart">
             <img svg-inline src="../../assets/img/widget/heart2.svg" />
         </i>
-        <span>喜欢</span>
+        <span>{{ $t('喜欢') }}</span>
     </el-button>
 </template>
 

@@ -18,7 +18,7 @@
                 >
                     <img class="u-pic" svg-inline :src="homeicon" />
                     <img class="u-pic-hover" svg-inline :src="homeicon" />
-                    <span class="u-txt">首页</span>
+                    <span class="u-txt">{{ $t('首页') }}</span>
                 </a>
             </li>
             <li v-for="(item, i) in list" :key="i" :class="{ 'u-app-start': item.lf }">
@@ -41,7 +41,7 @@
         </ul>
         <span class="u-close" @click="closeBox($event)">
             <i class="el-icon-upload2"></i>
-            <span>收起</span>
+            <span>{{ $t('收起') }}</span>
         </span>
     </div>
 </template>

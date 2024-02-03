@@ -2,7 +2,7 @@
     <WikiPanel class="c-wiki-comments" scene="detail">
         <template slot="head-title">
             <i class="el-icon-chat-line-round"></i>
-            <span>百科评论</span>
+            <span>{{ $t('百科评论') }}</span>
         </template>
         <template slot="body">
             <div class="m-comments-panel" v-loading="loading">
@@ -27,7 +27,7 @@
                 <div id="m-reply-form" class="m-reply-form">
                     <h4 class="u-title">
                         <i class="el-icon-chat-dot-round"></i>
-                        <span>回复</span>
+                        <span>{{ $t('回复') }}</span>
                     </h4>
                     <textarea class="u-reply-content" v-model="reply_form.content"></textarea>
                     <div class="u-author">
@@ -36,7 +36,7 @@
                     </div>
                     <el-button type="primary" class="u-submit" @click="create_comment(reply_form)">
                         <i class="el-icon-check"></i>
-                        <span>提交</span>
+                        <span>{{ $t('提交') }}</span>
                     </el-button>
                 </div>
             </div>

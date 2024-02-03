@@ -17,7 +17,7 @@
             >
                 <i slot="prepend" class="el-icon-search"></i>
             </el-input>
-            <el-button class="u-search-btn" type="primary" @click="onSearch" :disabled="!search">搜索</el-button>
+            <el-button class="u-search-btn" type="primary" @click="onSearch" :disabled="!search">{{ $t('搜索') }}</el-button>
         </div>
         <div class="u-preview" v-loading="loading">
             <template v-if="searched && status">
@@ -35,8 +35,8 @@
             </template>
         </div>
         <div slot="footer" class="dialog-footer">
-            <el-button @click="cancel">取 消</el-button>
-            <el-button type="primary" @click="confirm">确 定</el-button>
+            <el-button @click="cancel">{{ $t('取 消') }}</el-button>
+            <el-button type="primary" @click="confirm">{{ $t('确 定') }}</el-button>
         </div>
     </el-dialog>
 </template>

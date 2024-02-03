@@ -1,6 +1,6 @@
 <template>
     <div class="w-creators" v-if="visible">
-        <span class="w-creators-title">联合创作</span>
+        <span class="w-creators-title">{{ $t('联合创作') }}</span>
         <a
             class="w-creators-super w-creators-item"
             v-if="super_author"

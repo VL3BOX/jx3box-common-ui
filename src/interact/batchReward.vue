@@ -1,8 +1,8 @@
 <template>
   <div class="w-boxcoin-user">
-      <el-button @click="openBoxcoinPop" type="primary" size="mini">批量打赏</el-button>
+      <el-button @click="openBoxcoinPop" type="primary" size="mini">{{ $t('批量打赏') }}</el-button>
       <el-dialog
-          title="品鉴评分"
+          :title="$t('品鉴评分')"
           :visible.sync="visible"
           custom-class="w-boxcoin-pop"
           :close-on-click-modal="false"
@@ -10,7 +10,7 @@
       >
           <div class="w-boxcoin-admin-content">
               <div class="u-left">
-                  <em class="u-label">本月状态</em>
+                  <em class="u-label">{{ $t('本月状态') }}</em>
                   已用<b>{{ this.used }}</b> 剩余<b>{{ this.left }}</b> 总计<b>{{ this.total }}</b>
                   <el-progress
                       :percentage="this.total ? 100 - (this.used * 100 / this.total) : 0"
@@ -41,14 +41,14 @@
                           show-word-limit
                       ></el-input>
                       <el-button :disabled="fetchingCurrentRelease" @click="insertCurrentRelease"
-                          >插入当前版本</el-button
+                          >{{ $t('插入当前版本') }}</el-button
                       >
                   </div>
               </div>
           </div>
           <span slot="footer" class="dialog-footer">
-              <el-button @click="visible = false">取 消</el-button>
-              <el-button type="primary" @click="submit" :disabled="!ready || submitting">确 定</el-button>
+              <el-button @click="visible = false">{{ $t('取 消') }}</el-button>
+              <el-button type="primary" @click="submit" :disabled="!ready || submitting">{{ $t('确 定') }}</el-button>
           </span>
       </el-dialog>
   </div>

@@ -6,7 +6,7 @@
         :size="button_size"
         icon="el-icon-setting"
         @click="toggleAdminPanel()"
-        >管理</el-button
+        >{{ $t('管理') }}</el-button
     >
 </template>
 

@@ -1,7 +1,7 @@
 <template>
     <el-drawer
         class="c-admin"
-        title="管理面板"
+        :title="$t('管理面板')"
         :visible.sync="dialog_visible"
         :before-close="close"
         :append-to-body="true"
@@ -11,7 +11,7 @@
     >
         <div class="c-admin-wrapper">
             <!-- <template v-if="isAdmin"> -->
-            <el-divider content-position="left">状态变更</el-divider>
+            <el-divider content-position="left">{{ $t('状态变更') }}</el-divider>
             <el-radio-group v-model="post_status" class="c-admin-status" size="small">
                 <el-radio-button v-for="(option, key) in status_options" :label="key" :key="key">{{
                     option
@@ -19,21 +19,21 @@
             </el-radio-group>
             <!-- </template> -->
 
-            <el-divider content-position="left">可见性变更</el-divider>
+            <el-divider content-position="left">{{ $t('可见性变更') }}</el-divider>
             <el-radio-group v-model="visible" class="c-admin-status" size="small">
                 <el-radio-button v-for="(option, key) in visible_options" :label="key" :key="key">{{
                     option
                 }}</el-radio-button>
             </el-radio-group>
 
-            <el-divider content-position="left">推荐角标</el-divider>
+            <el-divider content-position="left">{{ $t('推荐角标') }}</el-divider>
             <el-checkbox-group v-model="mark" class="c-admin-mark" size="small">
                 <el-checkbox v-for="(option, key) in mark_options" :label="key" :key="key">{{ option }}</el-checkbox>
             </el-checkbox-group>
 
-            <el-divider content-position="left">高亮置顶</el-divider>
-            <el-checkbox class="c-admin-highlight-checkbox" v-model="isSticky">置顶</el-checkbox>
-            <el-checkbox class="c-admin-highlight-checkbox" v-model="isHighlight">开启高亮</el-checkbox>
+            <el-divider content-position="left">{{ $t('高亮置顶') }}</el-divider>
+            <el-checkbox class="c-admin-highlight-checkbox" v-model="isSticky">{{ $t('置顶') }}</el-checkbox>
+            <el-checkbox class="c-admin-highlight-checkbox" v-model="isHighlight">{{ $t('开启高亮') }}</el-checkbox>
             <template v-if="isHighlight">
                 <el-color-picker
                     class="c-admin-highlight-block"
@@ -42,14 +42,14 @@
                     size="mini"
                 ></el-color-picker>
                 <span class="c-admin-highlight-preview" :style="{ color: color }" style="margin-right: 10px"
-                    >预览高亮效果</span
+                    >{{ $t('预览高亮效果') }}</span
                 >
             </template>
             <el-checkbox class="c-admin-highlight-checkbox" v-model="isStar" :true-label="1" :false-label="0"
-                >精选</el-checkbox
+                >{{ $t('精选') }}</el-checkbox
             >
 
-            <el-divider content-position="left">封面海报</el-divider>
+            <el-divider content-position="left">{{ $t('封面海报') }}</el-divider>
             <div class="c-admin-banner">
                 <el-upload
                     class="c-admin-upload el-upload--picture-card"
@@ -63,24 +63,24 @@
                     <i class="el-icon-plus"></i>
                 </el-upload>
                 <el-input class="u-banner" v-model="post_banner">
-                    <span slot="prepend">海报地址</span>
+                    <span slot="prepend">{{ $t('海报地址') }}</span>
                     <span slot="append">
                         <span class="u-btn" @click="removeBanner"> <i class="el-icon-circle-close"></i> 移除海报 </span>
                     </span>
                 </el-input>
             </div>
 
-            <el-divider content-position="left">元信息</el-divider>
+            <el-divider content-position="left">{{ $t('元信息') }}</el-divider>
             <div class="c-admin-info">
                 <div class="w-select c-admin-type">
                     <el-select
                         v-model="post_type"
-                        placeholder="请选择板块"
+                        :placeholder="$t('请选择板块')"
                         style="width: 100%"
                         class="u-select drawer-item-content"
                         :disabled="appDisabled"
                     >
-                        <span slot="prepend">板块</span>
+                        <span slot="prepend">{{ $t('板块') }}</span>
                         <el-option
                             v-for="type in type_options"
                             :key="type.value"
@@ -100,23 +100,23 @@
 
             <div class="c-admin-extend" v-if="showExtend">
                 <div class="u-condition u-map" v-if="subtypeMap && Object.keys(subtypeMap)">
-                    <span class="u-prepend el-input-group__prepend">类型</span>
-                    <el-select v-model="post_subtype" filterable placeholder="请选择" clearable>
+                    <span class="u-prepend el-input-group__prepend">{{ $t('类型') }}</span>
+                    <el-select v-model="post_subtype" filterable :placeholder="$t('请选择')" clearable>
                         <el-option v-for="(label, value) in subtypeMap" :value="value" :label="label" :key="value">
                         </el-option>
                     </el-select>
                 </div>
                 <div class="u-condition u-map">
-                    <span class="u-prepend el-input-group__prepend">主题</span>
-                    <el-select v-model="topics" filterable placeholder="请选择" clearable multiple collapse-tags>
+                    <span class="u-prepend el-input-group__prepend">{{ $t('主题') }}</span>
+                    <el-select v-model="topics" filterable :placeholder="$t('请选择')" clearable multiple collapse-tags>
                         <el-option v-for="value in tags" :value="value" :label="value" :key="value"> </el-option>
                     </el-select>
                 </div>
             </div>
 
             <div class="c-admin-buttons">
-                <el-button type="primary" @click="submit" :loading="pushing">提交</el-button>
-                <el-button type="plain" @click="close">取消</el-button>
+                <el-button type="primary" @click="submit" :loading="pushing">{{ $t('提交') }}</el-button>
+                <el-button type="plain" @click="close">{{ $t('取消') }}</el-button>
             </div>
         </div>
     </el-drawer>

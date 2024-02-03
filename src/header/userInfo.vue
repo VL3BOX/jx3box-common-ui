@@ -5,13 +5,13 @@
             <template v-if="isPhone">
                 <ul class="u-menu u-pop-content">
                     <li>
-                        <a href="/dashboard">个人中心</a>
+                        <a href="/dashboard">{{ $t('个人中心') }}</a>
                     </li>
                     <li>
-                        <a :href="url.msg">消息中心</a>
+                        <a :href="url.msg">{{ $t('消息中心') }}</a>
                     </li>
                     <li>
-                        <a :href="url.publish">发布中心</a>
+                        <a :href="url.publish">{{ $t('发布中心') }}</a>
                     </li>
                     <hr>
                     <li v-for="item in userPanel" :key="item.label">
@@ -29,7 +29,7 @@
                         </li>
                     </template>
                     <li>
-                        <a @click="logout">退出登录</a>
+                        <a @click="logout">{{ $t('退出登录') }}</a>
                     </li>
                 </ul>
             </template>
@@ -41,8 +41,8 @@
                                 showUserName(user.display_name)
                             }}</a>
                             <a class="u-sign" href="/dashboard/cooperation">
-                                <img :src="super_author_icon" class="u-superauthor-profile" alt="superauthor" title="签约作者" :class="{ off: !isSuperAuthor }" /></a>
-                            <a class="u-vip" href="/vip/premium?from=header_usermenu" target="_blank" title="专业版账号">
+                                <img :src="super_author_icon" class="u-superauthor-profile" alt="superauthor" :title="$t('签约作者')" :class="{ off: !isSuperAuthor }" /></a>
+                            <a class="u-vip" href="/vip/premium?from=header_usermenu" target="_blank" :title="$t('专业版账号')">
                                 <i class="i-icon-vip" :class="{ on: isPRO }">{{ vipType }}</i>
                                 <span class="u-expire" v-if="isPRO">（有效期至：{{ pro_expire_date }}）</span>
                             </a>
@@ -54,9 +54,9 @@
                     </div>
 
                     <el-button-group class="u-actions">
-                        <a class="el-button el-button--default is-plain" href="/dashboard">个人中心</a>
-                        <a class="el-button el-button--default is-plain" :href="url.profile">资料设置</a>
-                        <a class="el-button el-button--default is-plain" href="/dashboard/frame">主题风格</a>
+                        <a class="el-button el-button--default is-plain" href="/dashboard">{{ $t('个人中心') }}</a>
+                        <a class="el-button el-button--default is-plain" :href="url.profile">{{ $t('资料设置') }}</a>
+                        <a class="el-button el-button--default is-plain" href="/dashboard/frame">{{ $t('主题风格') }}</a>
                     </el-button-group>
 
                     <div class="u-other">
@@ -69,7 +69,7 @@
                         <a href="/dashboard/feedback" class="u-item"><i class="el-icon-phone-outline"></i>反馈帮助 </a>
                         <hr />
                         <div class="u-logout">
-                            <el-button @click="logout" size="small" plain>退出登录</el-button>
+                            <el-button @click="logout" size="small" plain>{{ $t('退出登录') }}</el-button>
                         </div>
                     </div>
                 </div>

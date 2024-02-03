@@ -8,11 +8,11 @@
             :disabled="isSelf || !status"
             :title="btnTitle"
             plain
-            >赠礼</el-button
+            >{{ $t('赠礼') }}</el-button
         >
 
         <el-dialog
-            title="赠礼"
+            :title="$t('赠礼')"
             :visible.sync="visible"
             :append-to-body="true"
             class="c-author-gift-dialog"
@@ -20,12 +20,12 @@
         >
             <div class="u-content">
                 <div class="u-left">
-                    <em class="u-label">🌟 金箔</em>
+                    <em class="u-label">🌟 {{ $t('金箔') }}</em>
                     <b>{{ left }}</b>
                     <a class="u-charge" :href="chargeLink" target="_blank">[充值]</a>
                 </div>
                 <div class="u-list">
-                    <em class="u-label">❤️ 赠送</em>
+                    <em class="u-label">❤️ {{ $t('赠送') }}</em>
                     <div class="u-points">
                         <el-radio-group v-model="count">
                             <el-radio :label="item" v-for="item in fitPoints" :key="item" border>
@@ -36,7 +36,7 @@
                     </div>
                 </div>
                 <div class="u-msg">
-                    <em class="u-label">📝 寄语</em>
+                    <em class="u-label">📝 {{ $t('寄语') }}</em>
                     <div class="u-input">
                         <el-input
                             v-model="remark"
@@ -49,9 +49,9 @@
                 </div>
             </div>
             <span slot="footer" class="dialog-footer">
-                <el-button @click="visible = false">取 消</el-button>
+                <el-button @click="visible = false">{{ $t('取 消') }}</el-button>
                 <el-button type="primary" @click="submit" :disabled="!ready || loading" :loading="loading"
-                    >确 定</el-button
+                    >{{ $t('确 定') }}</el-button
                 >
             </span>
         </el-dialog>

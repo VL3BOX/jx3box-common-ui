@@ -2,7 +2,7 @@
     <div class="container-page">
         <Header></Header>
         <Breadcrumb
-            name="频道名称"
+            :name="$t('频道名称')"
             slug="slug"
             root="/slug"
             :publishEnable="true"
@@ -24,20 +24,20 @@
             <el-tabs v-model="tab" type="card">
                 <el-tab-pane label="CMS作品" name="post">
                     <el-radio-group v-model="post_id">
-                        <el-radio label="41346">临时测试</el-radio>
+                        <el-radio label="41346">{{ $t('临时测试') }}</el-radio>
                         <el-radio label="35605">Markdown</el-radio>
-                        <el-radio label="32035">仅小册</el-radio>
-                        <el-radio label="30017">仅联合创作者</el-radio>
-                        <el-radio label="30582">小册和联合创作者</el-radio>
-                        <el-radio label="31129">无小册和联合创作者</el-radio>
+                        <el-radio label="32035">{{ $t('仅小册') }}</el-radio>
+                        <el-radio label="30017">{{ $t('仅联合创作者') }}</el-radio>
+                        <el-radio label="30582">{{ $t('小册和联合创作者') }}</el-radio>
+                        <el-radio label="31129">{{ $t('无小册和联合创作者') }}</el-radio>
                     </el-radio-group>
                     <singlebox :post="post" @extendUpdate="updateExtend" />
                 </el-tab-pane>
-                <el-tab-pane label="通用组件" name="widget">
+                <el-tab-pane :label="$t('通用组件')" name="widget">
                     <PostHeader :post="post" />
                     <Creators :postId="30432" style="margin-bottom: 10px" />
                     <Collection :id="59" :defaultVisible="true" />
-                    <UserPop title="添加用户" v-model="visible" @confirm="addUser" />
+                    <UserPop :title="$t('添加用户')" v-model="visible" @confirm="addUser" />
                     <el-button @click="visible = true">用户POP</el-button>
                     <!-- :postId="23865" -->
                     <Thx
@@ -54,7 +54,7 @@
                     <Mark label="KEY" value="VALUE" BGL="#000" BGR="#F39" />
                     <Fav post-id="90" post-type="jx3dat" post-title="jx3dat测试标题" />
                     <Feed post-id="90" post-type="jx3dat" />
-                    <Print title="传入标题" />
+                    <Print :title="$t('传入标题')" />
                     <QRcode />
                     <Sharing />
 
@@ -78,21 +78,21 @@
                     ></uploadImage>
                     <AuthorMedal :author-id="8"></AuthorMedal>
                 </el-tab-pane>
-                <el-tab-pane label="百科组件" name="wiki">
+                <el-tab-pane :label="$t('百科组件')" name="wiki">
                     <WikiPanel :wiki-post="wikiPost">
                         <template slot="head-title">
                             <i class="el-icon-location-information"></i>
-                            <span class="u-title">通识正文</span>
+                            <span class="u-title">{{ $t('通识正文') }}</span>
                         </template>
                         <template slot="head-actions">
                             <a class="el-button el-button--primary u-publish">
                                 <i class="el-icon-edit"></i>
-                                <span>完善百科通识</span>
+                                <span>{{ $t('完善百科通识') }}</span>
                             </a>
-                            <span class="u-more">查看更多</span>
+                            <span class="u-more">{{ $t('查看更多') }}</span>
                         </template>
                         <template slot="body"
-                            >正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容</template
+                            >{{ $t('正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容') }}</template
                         >
                     </WikiPanel>
                     <hr />
@@ -103,7 +103,7 @@
                     <WikiComments type="achievement" source-id="456" />
                     <hr />
                 </el-tab-pane>
-                <el-tab-pane label="头像" name="avatar">
+                <el-tab-pane :label="$t('头像')" name="avatar">
                     <el-radio-group v-model="avatar_size">
                         <el-radio label="xxs">xxs-36/48</el-radio>
                         <el-radio label="xs">xs-48/68</el-radio>
@@ -261,7 +261,7 @@ export default {
             avatar_size: "xl",
 
             upload: "",
-            text: `<Text>text="使用：<BUFF 3222 1 desc>，持续<BUFF 3222 1 time>。\\\n" font=105 </text><Text>text="红豆沙做馅儿，精致细腻的广式月饼。" font=100 </text><Text>text="使用：能在唐门套装供应商处换取如下装备。\\\n" font=105 </text><Text>text="[燕云·重泉靴]" name="iteminfolink" eventid=513 script="this.nVersion=0 this.dwTabType=7 this.dwIndex=35244 this.OnItemLButtonDown=function() OnItemLinkDown(this) end" font=100 r=255 g=40 b=255 </text><Text>text="，" font=105 </text><Text>text="[燕云·铭松靴]" name="iteminfolink" eventid=513 script="this.nVersion=0 this.dwTabType=7 this.dwIndex=35245 this.OnItemLButtonDown=function() OnItemLinkDown(this) end" font=100 r=255 g=40 b=255 </text><Text>text="。" font=100 </text>`,
+            text: `<Text>text="使用：<BUFF 3222 1 desc>，持续<BUFF 3222 1 time>。\\\n" font=105 </text><Text>:text="$t('红豆沙做馅儿，精致细腻的广式月饼。')" font=100 </text><Text>text="使用：能在唐门套装供应商处换取如下装备。\\\n" font=105 </text><Text>text="[燕云·重泉靴]" name="iteminfolink" eventid=513 script="this.nVersion=0 this.dwTabType=7 this.dwIndex=35244 this.OnItemLButtonDown=function() OnItemLinkDown(this) end" font=100 r=255 g=40 b=255 </text><Text>text="，" font=105 </text><Text>text="[燕云·铭松靴]" name="iteminfolink" eventid=513 script="this.nVersion=0 this.dwTabType=7 this.dwIndex=35245 this.OnItemLButtonDown=function() OnItemLinkDown(this) end" font=100 r=255 g=40 b=255 </text><Text>text="。" font=100 </text>`,
 
             post_topics: post_topics['pve'],
             tag2: ''

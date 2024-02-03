@@ -3,7 +3,7 @@
         <div class="u-label">
             <!-- <i class="el-icon-star-off"></i> -->
             <img svg-inline src="../../assets/img/leftsidebar/fans.svg" />
-            <span>粉丝榜</span>
+            <span>{{ $t('粉丝榜') }}</span>
         </div>
         <div class="f-avatar">
             <el-tooltip
