@@ -1,10 +1,10 @@
 <template>
-    <div class="c-author-honor" :style="{ backgroundImage: `url(${imgUrl()})` }" v-if="honor">
+    <a class="c-author-honor" :style="{ backgroundImage: `url(${imgUrl()})` }" v-if="honor" :href="url" target="_blank">
         <span v-if="!isJdt" :style="{ color: honor.color }">{{ honor.honor }}</span>
-    </div>
+    </a>
 </template>
 <script>
-import { __imgPath } from "@jx3box/jx3box-common/data/jx3box.json";
+import { __imgPath, __Root } from "@jx3box/jx3box-common/data/jx3box.json";
 import { getUserHonor } from "../../service/author";
 import { inRange } from "lodash";
 const HONOR_IMG_KEY = "honor_img";
@@ -25,16 +25,16 @@ export default {
     },
     computed: {
         isJdt() {
-            return this.honor?.val?.toLowerCase()?.includes("jdt");
+            return this.honor?.honor_info?.img?.toLowerCase()?.includes("jdt");
         },
+        url() {
+            return this.honor?.honor_info?.url ? __Root + this.honor?.honor_info?.url : "";
+        }
     },
     methods: {
         imgUrl: function () {
-            let item = this.honor;
+            let item = this.honor?.honor_info;
             if (!item) return;
-            if (item.isImgIndex) {
-                return __imgPath + `decoration/honor/${item.img}/${item.img}_${item.imgIndex}.${item.img_ext}`;
-            }
             return __imgPath + `decoration/honor/${item.img}/${item.img}.${item.img_ext}`;
         },
         getHonor() {
@@ -67,7 +67,6 @@ export default {
             let ranking = honorConfig.ranking;
             let honorStr = honorConfig.year || "";
 
-            console.log(honorConfig, regPrefix)
             if (!only) {
                 if (regPrefix) {
                     honorStr = honorStr + (data[regPrefix[0].slice(1, -1)] || "");
@@ -77,7 +76,7 @@ export default {
             } else {
                 honorStr = prefix;
             }
-            if (ranking.length > 0) {
+            if (ranking?.length > 0) {
                 data.imgIndex = 0;
                 for (let i = 0; i < ranking.length; i++) {
                     if (
@@ -105,7 +104,7 @@ export default {
             data.img = honorConfig.img;
             data.img_ext = honorConfig.img_ext;
             data.isHave = true;
-            data.isImgIndex = ranking.length > 0;
+            data.isImgIndex = ranking?.length > 0;
             sessionStorage.setItem(HONOR_IMG_KEY + this.uid, JSON.stringify(data));
             this.honor = data;
         },
