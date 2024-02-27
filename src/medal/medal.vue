@@ -15,12 +15,13 @@
 
 <script>
 import { getMedalLink } from "@jx3box/jx3box-common/js/utils";
+import { __Root } from "@jx3box/jx3box-common/data/jx3box.json";
 export default {
     name: "author_medal",
     props: {
         medals: {
             type: Array,
-            default: () => [], // [{ rank_id, medal_desc, medal }]
+            default: () => [], 
         },
         showIcon: {
             type: Function,
@@ -28,8 +29,9 @@ export default {
         },
     },
     methods: {
-        medalLink({ rank_id, medal_type = "rank" }) {
-            return rank_id ? getMedalLink(rank_id, medal_type) : "";
+        medalLink(medal) {
+            if (medal.medal_url) return `${__Root}${medal.medal_url}`
+            return medal.rank_id ? getMedalLink(medal.rank_id, medal.medal_type || "rank") : "";
         },
     },
 };
